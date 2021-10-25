@@ -6,8 +6,36 @@
     <link th:href="@{style.css}" rel="stylesheet" />
 </head>
 <body>
+<header class="header">
+    <h1>Splash</h1>
+    <div class="nav">
+        <a href="/">home</a>
+        <a href="albums">albums</a>
+        <a href="capitalize">capitalize</a>
+    </div>
+</header>
+<div >
+    <form method="POST" action="/albums">
+            <label for="title">Album Title:</label>
+                <input type="text" id="title" placeholder="Album Title" name="title">
+        <br>
+                     <label for="artist">Artist</label>
+                <input type="text" class="form-control" id="artist" placeholder="Artist" name="artist">
+        <br>
+                     <label for="songCount">Song Count</label>
+        <input type="number"  id="songCount" placeholder="Song Count" name="songCount">
+        <br>
+            <label for="length">Length</label>
+                <input type="number" id="length" placeholder="Album Length (in minutes)" name="length">
+        <br>
+        <label for="imageUrl">Image URL</label>
+                <input type="url" id="imageUrl" placeholder="Image URL" name="imageUrl">
+        <br>
+                <button type="submit">Submit</button>
+    </form>
+</div>
 
-<div th:each="album:${albumList}">
+<div th:each="album:${albumList}" class="img">
 <img th:src="${album.getImageUrl()}">
 <P th:text="${album.getTitle()}"></P>
 <P th:text="${album.getArtist()}"></P>

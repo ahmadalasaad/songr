@@ -1,4 +1,4 @@
-div{
+.img{
 display:inline-block;
 width:30%;
 margin-left:3%;
@@ -12,23 +12,38 @@ font-family: sans-serif;
     text-transform: uppercase;
 }
 header{
-background-color:gray;
+background-color:#6b5b95;
+height:50px;
+position:relative;
 }
 h1{
-font-family: sans-serif;
-    font-size: 2em;
-display:inline-block;
-color:blue;
+    font-family: sans-serif;
+    font-size: 1.6em;
+    color:#feb236;
+    display-inline:block;
+    position:absolute;
+    left:2%;
+        bottom:0px;
 }
 .nav{
-display:inline-block;
-width :50%;
-    margin-left:40%;
+    display:inline-block;
+    width :50%;
+    position:absolute;
+    right:0%;
+        top:10px;
 }
 .nav a{
-  text-decoration: none;
+    text-decoration: none;
     font-family: sans-serif;
     font-size: 1.5em;
     margin-left:10%;
     color:black;
     }
+    .nav a:hover{
+        background-color:#d64161;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 1.5em;
+        margin-left:10%;
+        color:black;
+        }
