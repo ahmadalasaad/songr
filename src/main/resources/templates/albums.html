@@ -35,12 +35,13 @@
     </form>
 </div>
 
-<div th:each="album:${albumList}" class="img">
-<img th:src="${album.getImageUrl()}">
-<P th:text="${album.getTitle()}"></P>
+<div th:each="album:${albumList}" class="img" >
+    <a th:href="${'/album/ '+album}"> <img th:src="${album.getImageUrl()}" ></a>
+<P th:text="${album.getTitle()}" ></P>
 <P th:text="${album.getArtist()}"></P>
 <P th:text="${album.getSongCount()}"></P>
 <P th:text="${album.getLength()}"></P>
+
 </div>
 </body>
 </html>
