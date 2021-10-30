@@ -13,8 +13,14 @@
     <P th:text="${album.getSongCount()}"></P>
     <P th:text="${album.getLength()}"></P>
     <ul>
-        <li ></li>
+        <li th:each="song: ${album.songs}">
+
+            <span th:text="${'Song title : '+ song.getTitle()}"></span>
+            <span th:text="${'Song track number :  '+   song.getTrackNumber()}"></span>
+            <span th:text="${'Song length :  '+song.getLength()}"></span>
+        </li>
     </ul>
+
 </div>
 <div >
     <form method="POST" action="/song">
@@ -26,6 +32,9 @@
         <br>
         <label for="trackNumber">Song track number</label>
         <input type="number" id="trackNumber"  name="trackNumber">
+        <br>
+        <label for="album">Album Title:</label>
+        <input type="text"  id="album" name="album" th:value="${album.title}" required readonly>
         <br>
         <button type="submit">Submit</button>
     </form>

@@ -19,7 +19,7 @@ public class Album {
     private int length;
     private String imageUrl ;
     @OneToMany(mappedBy = "songsAlbum")
-    List<Song> songs;
+    public List<Song> songs;
     public Album(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
         this.artist = artist;
