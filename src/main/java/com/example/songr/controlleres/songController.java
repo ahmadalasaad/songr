@@ -30,10 +30,6 @@ public class songController {
         System.out.println(songsAlbum.get(0).getTitle());
         Song newSong = new Song(title, length, trackNumber,songsAlbum.get(0));
         songRepository.save(newSong);
-        List<Song> songs = songRepository.findByTitleAndSongsAlbum(
-                newSong.getTitle(),
-                newSong.songsAlbum
-        );
         return new RedirectView("/album/"+songsAlbum.get(0).getId());
     }
     @GetMapping("/song")
